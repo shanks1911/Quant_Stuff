@@ -1,49 +1,44 @@
-# Quant_Stuff 📘💹
+# 🧠 Quant Snowball Series: A Project-Based Learning Journey
 
-This repository is a collection of projects I've been working on to deepen my understanding of **quantitative finance**.
-
-Rather than following a purely theoretical or course-based path, I decided to take a **project-based approach** — learning key quant and financial concepts by building small but focused implementations around them. The goal is to gradually build a strong foundation in areas like **risk modeling**, **portfolio analytics**, **strategy backtesting**, **time series forecasting**, and more.
-
-Each project typically corresponds to a week’s worth of learning and includes:
-- 🧠 Code implementations in Python 
-- 📝 Notes and write-ups explaining the concepts and decisions
-- 📊 Real-world data and visualizations
-- ⚙️ A focus on both **financial understanding** and **practical implementation**
 
 ---
 
-## 🎯 Why This Exists
+🎯 **Why This Exists**
 
 I created this repo to:
-- 📚 Structure my learning in a progressive, hands-on way
-- 💼 Build a portfolio of work that reflects real-world quant applications
-- 🧪 Reinforce theoretical concepts through code and experimentation
-- 📈 Track long-term progress as I explore more advanced topics
 
-I'm especially interested in the intersection of **data, mathematics, and markets** — and this repository reflects my exploration of that space through weekly, iterative learning.
+- 📚 Structure my learning in a progressive, hands-on way  
+- 💼 Build a portfolio that reflects real-world quant and data-driven finance work  
+- 🧪 Reinforce theory through code, intuition, and experimentation  
+- 📈 Track long-term progress toward mastering quantitative research and trading  
 
----
-
-## 📂 Topics Covered / In Progress
-
-- 📈 Asset returns, volatility, and risk metrics  
-- 📊 Portfolio performance and drawdown analysis  
-- 🔁 Time series models and stationarity tests  
-- 🧮 Factor models (CAPM, Fama-French, multi-factor regression)  
-- 🧠 Optimization and risk-adjusted portfolio allocation  
-- 📉 Strategy design and backtesting frameworks  
-- 📚 Research-based modeling and validation  
-
-Each topic is explored through a self-contained project, with concepts building cumulatively over time.
+I’m especially interested in the intersection of **mathematics, data, and markets** — this repo captures my exploration of that space through **weekly, iterative projects** designed to mimic real-world quant workflows.
 
 ---
 
-## ✍️ Note
+📂 **Topics Covered / In Progress**
 
-This is a **learning-focused repository**, not a polished product showcase. Some notebooks may contain exploratory code, intermediate insights, or ongoing questions — and that's intentional. My aim is to stay transparent about the learning process while building a body of work that reflects real growth.
+- 📈 Asset returns, volatility, and Sharpe ratio analysis  
+- 📉 Drawdown tracking and risk visualization  
+- 🔁 Mean reversion, cointegration, and statistical arbitrage  
+- 🧮 Factor models (CAPM, Fama-French, multi-factor regressions)  
+- 📊 Portfolio construction and optimization  
+- 📚 Hypothesis testing and signal validation  
+- 🧠 Machine learning for alpha generation  
+- 🛠️ Custom backtesting frameworks and strategy simulation  
+- 💼 Multi-strategy portfolio analytics and dashboarding  
 
-If you're reviewing this as part of an application or evaluation, I'd be happy to walk through any part of it.
+Each topic is embedded within a **self-contained, end-to-end project**, with concepts building cumulatively over time. All data is real market data, and tools used reflect those seen in actual quant roles.
 
-<br/>
+---
 
-— *Sanket Dangle* 🚀
+✍️ **Note**
+
+This is a **learning-focused repository**, not a polished product showcase.  
+Some notebooks contain raw exploration, intermediate results, or open questions — and that’s intentional. The goal is to **stay transparent** about the process while building a body of work that shows real growth over time.
+
+If you're reviewing this as part of an internship, job application, or mentorship program — I’d be happy to walk through the code or thinking behind any part of it.
+
+—
+
+🚀 Sanket Dangle
