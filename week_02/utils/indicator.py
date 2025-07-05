@@ -1,9 +1,7 @@
 # Calculates Spread and Z-Score for two tickers and visualises the spread/z-score behaviour
 
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 def calculate_zscore(df, window_size=30):
     
