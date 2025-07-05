@@ -31,6 +31,8 @@ I’m especially interested in the intersection of **mathematics, data, and mark
 Each topic is embedded within a **self-contained, end-to-end project**, with concepts building cumulatively over time. All data is real market data, and tools used reflect those seen in actual quant roles.
 
 ---
+💻 **Projects**
+    📉 Statistical Arbitrage Strategy Explorer : https://statarbstrategyexplorer.streamlit.app/
 
 ✍️ **Note**
 
