@@ -15,7 +15,7 @@ def calculate_zscore(df, window_size=30):
         'Spread': spread,
         'Z-Score': zscore
     },index = df.index)
-    result.to_csv('data/zscore_data.csv')  # Save to CSV for future use
+    # result.to_csv('data/zscore_data.csv')  # Save to CSV for future use
     return result
 
 def plot_spread(zscore_df, entry_threshold, exit_threshold):
