@@ -34,6 +34,7 @@ Each topic is embedded within a **self-contained, end-to-end project**, with con
 💻 **Projects**
 
  - 📉 Statistical Arbitrage Strategy Explorer (Daily basis) : https://statarbstrategyexplorer.streamlit.app/
+ - 📈 Intraday StatArb Trading Simulator : https://intradaystatarbtradingsimulator.streamlit.app/
 
 ✍️ **Note**
 
