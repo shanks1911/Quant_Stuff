@@ -2,5 +2,5 @@
 __pychache__
 *.pyc
 *.csv
-notes_2.txt
+/notes
 *.ipynb

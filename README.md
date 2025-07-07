@@ -33,7 +33,7 @@ Each topic is embedded within a **self-contained, end-to-end project**, with con
 ---
 💻 **Projects**
 
- - 📉 Statistical Arbitrage Strategy Explorer : https://statarbstrategyexplorer.streamlit.app/
+ - 📉 Statistical Arbitrage Strategy Explorer (Daily basis) : https://statarbstrategyexplorer.streamlit.app/
 
 ✍️ **Note**
 
