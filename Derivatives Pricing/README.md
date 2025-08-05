@@ -32,28 +32,3 @@ Simulator Version	Paths	Timesteps	Time Taken (s)	Speedup
 Pure Python (NumPy)	100,000	252	~X.XX s	1x
 C++ Accelerated (pybind11)	100,000	252	~Y.YY s	~50x
 (Benchmark results are approximate and depend on the execution machine.)				
-
-Setup and Installation
-To run this application locally, please follow these steps:
-
-1. Clone the repository:
-git clone https://github.com/your-username/derivatives-pricing-system.git
-cd derivatives-pricing-system
-
-2. Set up a Python environment:
-
-It is recommended to use a virtual environment.
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-
-3. Install Python dependencies:
-pip install -r requirements.txt
-
-4. Compile the C++ module:
-You will need a C++ compiler (like g++ or Clang). The pybind11 headers are included via the pip install.
-
-Usage
-Once the setup is complete, run the Streamlit application:
-streamlit run app.py
-
-Open your web browser and navigate to the local URL provided by Streamlit (usually http://localhost:8501).
