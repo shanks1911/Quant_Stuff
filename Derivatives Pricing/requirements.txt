@@ -2,5 +2,5 @@ streamlit
 numpy
 scipy
 matplotlib
-pybind11
+pandas
 yfinance
