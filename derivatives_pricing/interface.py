@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 from bsm_model import black_scholes_merton
 from payoff_diag import plot_payoff_diagram
+from implied_volatility import implied_volatility
 
 #  --- Streamlit App Layout ---
 
@@ -57,6 +58,24 @@ with tab1:
     payoff_fig = plot_payoff_diagram(S, EX, price, option_type)
     st.pyplot(payoff_fig)
 
+    # In your app.py, inside the "with tab1:" block, after the payoff chart:
+
+    st.divider()
+    st.subheader("Implied Volatility Calculator")
+    st.write("Find the volatility implied by a given market price.")
+
+    # Get the market price from the user
+    market_price_input = st.number_input("Enter Market Price of Option ($)", min_value=0.01, value=5.0, step=0.01, key="iv_input")
+
+    if st.button("Calculate Implied Volatility", key="iv_button"):
+        # Calculate implied volatility
+        iv = implied_volatility(market_price_input, S, EX, T, r, option_type)
+
+        # Display the result
+        if not np.isnan(iv):
+            st.metric(label="Calculated Implied Volatility", value=f"{iv * 100:.2f}%")
+        else:
+            st.error("Could not find an implied volatility. The market price may be outside the valid no-arbitrage range.")
 
 # --- Tab 2: Exotic Option Pricer ---
 with tab2:

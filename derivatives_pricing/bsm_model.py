@@ -15,8 +15,15 @@ def black_scholes_merton(S, EX, T, r, sigma, option_type='call'):
     r : float, Risk-free interest rate (annualized)
     sigma : float, Volatility of the underlying asset (annualized)
     option_type : str, 'call' for call option, 'put' for put option
+    
     Returns:
     float, Price of the option
+    greeks
+    delta, rate of change of option price with respect to the underlying asset price
+    gamma, rate of change of delta with respect to the underlying asset price
+    vega, rate of change of option price with respect to volatility
+    theta, rate of change of option price with respect to time
+    rho, rate of change of option price with respect to interest rate
     """
 
     # Calculating d1(Value Factor) and d2(risk neutral probability factor)
@@ -53,7 +60,7 @@ def black_scholes_merton(S, EX, T, r, sigma, option_type='call'):
     if T == 0:
         theta = 0
     theta = (-S * si.norm.pdf(d1) * sigma / (2 * np.sqrt(T)) - r * EX * np.exp(-r * T) * N_d2) if option_type.lower() == 'call' else (-S * si.norm.pdf(d1) * sigma / (2 * np.sqrt(T)) + r * EX * np.exp(-r * T) * (1 - N_d2))
-    
+
     # rho is the rate of change of option price with respect to interest rate
     # For call options, rho is positive as higher interest rates increase the option's value
     # For put options, rho is negative as higher interest rates decrease the option's value
