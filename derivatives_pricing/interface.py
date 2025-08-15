@@ -23,12 +23,13 @@ with tab1:
     with st.sidebar:
         st.subheader("Model Inputs")
         option_type = st.radio("Option Type", ('Call', 'Put'))
-        S = st.number_input("Current Stock Price ($)", min_value=0.1, value=100.0, step=0.50, format="%.2f")
-        EX = st.number_input("Strike Price ($)", min_value=0.1, value=100.0, step=0.50, format="%.2f")
-        T_days = st.slider("Time to Maturity (Days)", 1, 365, 90)
+        option_type = option_type.lower()  # Convert to lowercase for consistency
+        S = st.number_input("Current Stock Price ($)", min_value=0.1, value=100.0, format="%.2f")
+        EX = st.number_input("Strike Price ($)", min_value=0.1, value=100.0, format="%.2f")
+        T_days = st.number_input("Time to Maturity (Days)", min_value=1, max_value=365, value=90)
         T = T_days / 365.0 # Convert days to years
-        r = st.slider("Risk-Free Interest Rate (%)", 0.0, 10.0, 5.0, 0.1) / 100
-        sigma = st.slider("Volatility (%)", 1.0, 100.0, 20.0, 0.5) / 100
+        r = st.number_input("Risk-Free Interest Rate (%)", min_value=0.0, max_value=10.0, value=5.0) / 100
+        sigma = st.number_input("Volatility (%)", min_value=0.1, max_value=100.0, value=20.0) / 100
 
     # Calculate price and greeks
     price, delta, gamma, vega, theta, rho = black_scholes_merton(S, EX, T, r, sigma, option_type)
@@ -67,15 +68,14 @@ with tab1:
     # Get the market price from the user
     market_price_input = st.number_input("Enter Market Price of Option ($)", min_value=0.01, value=5.0, step=0.01, key="iv_input")
 
-    if st.button("Calculate Implied Volatility", key="iv_button"):
-        # Calculate implied volatility
-        iv = implied_volatility(market_price_input, S, EX, T, r, option_type)
+    # Calculate implied volatility
+    iv = implied_volatility(market_price_input, S, EX, T, r, option_type)
 
-        # Display the result
-        if not np.isnan(iv):
-            st.metric(label="Calculated Implied Volatility", value=f"{iv * 100:.2f}%")
-        else:
-            st.error("Could not find an implied volatility. The market price may be outside the valid no-arbitrage range.")
+    # Display the result
+    if not np.isnan(iv):
+        st.metric(label="Calculated Implied Volatility", value=f"{iv * 100:.2f}%")
+    else:
+        st.error("Could not find an implied volatility. The market price may be outside the valid no-arbitrage range.")
 
 # --- Tab 2: Exotic Option Pricer ---
 with tab2:
