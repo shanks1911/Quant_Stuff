@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from bsm_model import black_scholes_merton
 from payoff_diag import plot_payoff_diagram
 from implied_volatility import implied_volatility
+from monte_carlo import price_asian_option_mc
 
 #  --- Streamlit App Layout ---
 
@@ -79,9 +80,27 @@ with tab1:
 
 # --- Tab 2: Exotic Option Pricer ---
 with tab2:
-    st.header("Monte Carlo Simulator for Exotic Options")
-    st.info("Work in Progress: This section will house the C++ accelerated Monte Carlo engine for pricing path-dependent options like Asian options.")
-    # Placeholder for future content
+    st.header("Monte Carlo Simulator for Asian Options")
+    st.markdown("This tool uses a C++ accelerated engine to price path-dependent Asian options.")
+
+    # --- Simulation Parameters ---
+    st.subheader("Simulation Parameters")
+    num_simulations = st.slider("Number of Simulations", min_value=1000, max_value=100000, value=10000, step=1000)
+    steps = st.slider("Time Steps per Path", min_value=50, max_value=500, value=252, step=1)
+
+    if st.button("Run Monte Carlo Simulation"):
+        with st.spinner(f"Running {num_simulations:,} simulations... This may take a moment."):
+            # Call the pricing function using the correctly defined variables from the sidebar
+            asian_price, paths = price_asian_option_mc(S, EX, T, r, sigma, num_simulations, steps, option_type)
+
+            st.success("Simulation Complete!")
+            
+            # Display the result
+            st.metric(f"Asian {option_type.capitalize()} Price", f"${asian_price:.3f}")
+
+            # Display the plot of sample paths
+            st.subheader("Sample of Simulated Price Paths")
+            st.line_chart(paths)
 
 # --- Tab 3: Volatility Smile ---
 with tab3:

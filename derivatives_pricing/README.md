@@ -28,7 +28,8 @@ The system is designed with a clear separation of concerns:
 Performance Benchmark
 The Monte Carlo simulation's performance was significantly improved by rewriting the core loop in C++ and binding it to Python.
 
-Simulator Version	Paths	Timesteps	Time Taken (s)	Speedup
-Pure Python (NumPy)	100,000	252	~X.XX s	1x
-C++ Accelerated (pybind11)	100,000	252	~Y.YY s	~50x
+| Simulator Version | Paths | Timesteps | Time Taken (s) | Speedup |
+| :--- | :--- | :--- | :--- | :--- |
+| Pure Python (NumPy) | 100,000 | 252 | 65.71 s | 1x |
+| **C++ Accelerated (pybind11)** | **100,000** | **252** | **1.66 s** | **~40x** |
 (Benchmark results are approximate and depend on the execution machine.)				

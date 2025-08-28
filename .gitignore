@@ -1,7 +1,35 @@
-*.pdf
-__pychache__
+# --- Directories ---
+# Ignore directories for personal notes and reference materials
+/notes/
+/books/
+/.vscode/
+
+# --- Python Specific ---
+# Ignore Python cache files and compiled bytecode
+__pycache__/
 *.pyc
+
+# --- Compiled Artifacts & Binaries ---
+# Ignore compiled C++ modules for all platforms
+*.pyd
+*.so
+
+# Ignore executables
+*.exe
+
+# Ignore temporary Windows DLLs copied for local testing
+*.dll
+
+# --- Data & Documents ---
+# Ignore data files and document exports
 *.csv
-/notes
-*.ipynb
-/books
+*.pdf
+
+# --- IDE & Editor Specific ---
+# Ignore Jupyter Notebook checkpoints and cache
+.ipynb_checkpoints/
+
+# --- User-Specific (Optional) ---
+# It's often good practice to ignore notebooks themselves if they contain
+# sensitive data or are just for exploratory work, but this is optional.
+# *.ipynb
