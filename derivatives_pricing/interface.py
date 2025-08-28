@@ -1,11 +1,13 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import yfinance as yf
 
 from bsm_model import black_scholes_merton
 from payoff_diag import plot_payoff_diagram
 from implied_volatility import implied_volatility
 from monte_carlo import price_asian_option_mc
+from volatility_smile import plot_volatility_smile
 
 #  --- Streamlit App Layout ---
 
@@ -105,5 +107,26 @@ with tab2:
 # --- Tab 3: Volatility Smile ---
 with tab3:
     st.header("Implied Volatility Smile/Skew")
-    st.info("Work in Progress: This section will fetch live market data to calculate and plot the implied volatility for an options chain.")
-    # Placeholder for future content
+    st.markdown("Fetch live options data to calculate and plot the implied volatility for an options chain.")
+    
+    ticker = st.text_input("Enter Stock Ticker", "AAPL").upper()
+    
+    if st.button("Fetch & Plot Smile"):
+        # We need the current stock price for the IV calculation, so we fetch it.
+        try:
+            stock_info = yf.Ticker(ticker)
+            current_S = stock_info.history(period='1d')['Close'].iloc[0]
+            st.info(f"Using current market price for {ticker}: ${current_S:.2f}")
+        except IndexError:
+            st.error(f"Could not fetch current price for {ticker}. Using sidebar value: ${S:.2f}")
+            current_S = S # Fallback to sidebar value
+
+        with st.spinner(f"Fetching options data for {ticker}..."):
+            # Note: We pass current_S to the function now
+            smile_fig = plot_volatility_smile(ticker, current_S, T, r)
+            if smile_fig:
+                st.pyplot(smile_fig)
+            else:
+                st.error(f"Could not fetch options data for {ticker}. Please check the ticker or try again later.")
+
+

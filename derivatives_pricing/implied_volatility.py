@@ -24,9 +24,12 @@ def implied_volatility(market_price, S, EX, T, r, option_type='call'):
     
     # Use brentq to find the root of the objective function
     try:
-        implied_vol = brentq(objective_function, 1e-6, 5.0)  # Search between 0 and 5
-    except ValueError as e:
-        implied_vol = float('nan')  # If no root is found, return NaN
-        raise ValueError(f"Could not find implied volatility: {e}")
+        # Search for volatility between a very small number and 500%
+        implied_vol = brentq(objective_function, 1e-6, 5.0)
+    except ValueError:
+        
+        # If brentq fails to find a root (e.g., f(a) and f(b) have the same sign),
+        # we don't crash. We gracefully return NaN.
+        implied_vol = np.nan
     
     return implied_vol
