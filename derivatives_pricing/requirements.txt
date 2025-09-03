@@ -3,3 +3,5 @@ numpy
 scipy
 matplotlib
 yfinance
+pandas
+pybind11

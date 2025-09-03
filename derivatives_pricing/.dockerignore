@@ -1,0 +1,16 @@
+# Git and IDE files
+.git
+.gitignore
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local compiled files (we want to compile fresh inside the container)
+*.pyd
+*.so
+*.exe
+
+# Local dependencies
+/venv/

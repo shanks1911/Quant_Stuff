@@ -24,12 +24,11 @@ __pycache__/
 # Ignore data files and document exports
 *.csv
 *.pdf
+*.webm
 
 # --- IDE & Editor Specific ---
 # Ignore Jupyter Notebook checkpoints and cache
 .ipynb_checkpoints/
 
-# --- User-Specific (Optional) ---
-# It's often good practice to ignore notebooks themselves if they contain
-# sensitive data or are just for exploratory work, but this is optional.
-# *.ipynb
+# --- User-Specific ---
+*.ipynb
