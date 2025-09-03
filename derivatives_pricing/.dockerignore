@@ -7,10 +7,12 @@
 __pycache__/
 *.pyc
 
-# Local compiled files (we want to compile fresh inside the container)
+# Local compiled files (we compile fresh inside the container)
 *.pyd
 *.so
 *.exe
+*.dll
 
-# Local dependencies
-/venv/
+# Local virtual environment
+venv/
+.venv/
