@@ -3,6 +3,7 @@ pandas
 statsmodels
 matplotlib
 seaborn
-streamlit
+streamlit>=1.40.0
 yfinance
 pytz
+altair<5
